@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import feedparser
+import os  # Importa el módulo os para acceder a las variables de entorno
 
 app = Flask(__name__)
 
@@ -31,8 +32,5 @@ def episodio(id):
     return render_template("episodio.html", episodio=episodio)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-# Creación de carpetas necesarias
-# templates/index.html
-# templates/episodio.html
+    port = int(os.environ.get("PORT", 5000))  # Usa el puerto de Render o 5000 por defecto
+    app.run(host="0.0.0.0", port=port, debug=False)  # Asegúrate de que debug esté en False en producción
