@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>El que las hace las paga</h1>
-    <h2>Sábados 14 a 16hs - Radio Con Vos FM 89.9</h2>
-    <h3>Últimos Episodios</h3>
+  <div class="hero">
+
+    <h1 class="mainTitle">El que las hace las paga</h1>
+    <h2 class="subTitle">Sábados 14 a 16hs - Radio Con Vos FM 89.9</h2>
+  </div>
+  <h3>Últimos Episodios</h3>
     <ul>
         {% for episodio in episodios %}
             <li>
