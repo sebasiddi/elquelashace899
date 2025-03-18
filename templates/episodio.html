@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ episodio.titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ episodio.titulo }}</h1>
+    
+    <a class="spreaker-player" href="https://www.spreaker.com" data-resource="episode_id={{ episodio.id }}" data-width="100%" data-height="200px">Escuchar episodio</a>
+    <a href="{{ url_for('home') }}">Volver al índice</a>
+    <script async src="https://widget.spreaker.com/widgets.js"></script>
+</body>
+</html>
