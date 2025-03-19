@@ -32,5 +32,5 @@ def episodio(id):
     return render_template("episodio.html", episodio=episodio)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Usa el puerto de Render o 5000 por defecto
-    app.run(host="0.0.0.0", port=port, debug=False)  # Asegúrate de que debug esté en False en producción
+    port = int(os.environ.get("PORT", 5000)) 
+    app.run(host="0.0.0.0", port=port, debug=False)  
