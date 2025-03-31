@@ -8,17 +8,40 @@
 </head>
 <body>
   <div class="hero">
-
-    <h1 class="mainTitle">El que las hace las paga</h1>
-    <h2 class="subTitle">Sábados 14 a 16hs - Radio Con Vos FM 89.9</h2>
+    <div class="mainCointainer">
+      <h2 class="subTitle">Sábados 14 a 16hs - Radio Con Vos FM 89.9</h2>
+      <h1 class="mainTitle">El que las hace las paga</h1>
+      <img class="imgHero" src="{{ url_for('static', filename='img/foto.png') }}" alt="Foto de lxs cuatro integrantes del programa">
+       <img id="logopgm" src="{{ url_for('static', filename='img/logopgm.png') }}" alt="Logo de El que las hace las paga">
+    </div>
   </div>
-  <h3>Últimos Episodios</h3>
-    <ul>
-        {% for episodio in episodios %}
-            <li>
-                <a href="{{ url_for('episodio', id=episodio.id) }}">{{ episodio.titulo }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+  <!-- <ul>
+    {% for episodio in episodios %}
+    <li>
+      <a href="{{ url_for('episodio', id=episodio.id) }}">{{ episodio.titulo }}</a>
+    </li>
+    {% endfor %}
+  </ul> -->
+  <div class="listaEpisodios">
+      <h3>Últimos Episodios</h3>
+
+      <select onchange="window.location.href=this.value" style="
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: white;
+      border-radius: 8px;
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+  ">
+      <option value="">Selecciona un episodio...</option>
+      {% for episodio in episodios %}
+          <option value="{{ url_for('episodio', id=episodio.id) }}">
+              {{ episodio.titulo }}
+          </option>
+      {% endfor %}
+  </select>
+    </div>
 </body>
 </html>
